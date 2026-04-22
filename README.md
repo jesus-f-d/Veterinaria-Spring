@@ -1,8 +1,8 @@
-# 🐾 Clínica Veterinaria — API REST
+# Veterinary Clinic — REST API
 
-API REST para la gestión de una clínica veterinaria, desarrollada con Spring Boot. Permite administrar propietarios, mascotas y vacunas, con integración a la API de RENIEC para validación de datos del propietario.
+A REST API for managing a veterinary clinic, developed with Spring Boot. Allows management of owners, pets, and vaccines, with integration to the RENIEC API for owner data validation.
 
-## 🛠️ Tecnologías
+## 🛠️ Technologies
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat&logo=springboot&logoColor=white)
@@ -10,59 +10,58 @@ API REST para la gestión de una clínica veterinaria, desarrollada con Spring B
 ![Lombok](https://img.shields.io/badge/Lombok-red?style=flat)
 ![OpenFeign](https://img.shields.io/badge/OpenFeign-6DB33F?style=flat)
 
-## 📋 Funcionalidades
+## 📋 Features
 
-- **Propietarios** — registro con validación de DNI vía API RENIEC, búsqueda, listado
-- **Mascotas** — registro asociado a un propietario, gestión por especie y raza
-- **Vacunas** — registro de vacunas por mascota
-- **Manejo de errores** — respuestas estandarizadas con `ApiResponse` y excepciones globales
+- **Owners** — Registration with DNI validation via RENIEC API, search, and listing
+- **Pets** — Registration associated with an owner, management by species and breed
+- **Vaccines** — Recording of vaccines per pet
+- **Error Handling** — Standardized responses with `ApiResponse` and global exception handling
 
-## 🗂️ Estructura del proyecto
+## 🗂️ Project Structure
 
 ```
 src/main/java/com/clinica/spring/
-├── controller/      # Endpoints REST
-├── service/         # Lógica de negocio
-├── repository/      # Acceso a datos (JPA)
-├── entity/          # Entidades de BD
-├── dto/             # DTOs de request y response
-├── exception/       # Manejo global de excepciones
-├── client/          # Feign client para RENIEC
-└── config/          # Configuraciones (ModelMapper)
+├── controller/      # REST endpoints
+├── service/         # Business logic
+├── repository/      # Data access (JPA)
+├── entity/          # Database entities
+├── dto/             # Request and response DTOs
+├── exception/       # Global exception handling
+├── client/          # Feign client for RENIEC
+└── config/          # Configurations (ModelMapper)
 ```
 
-## ⚙️ Configuración
+## ⚙️ Configuration
 
-1. Clona el repositorio
-2. Crea una base de datos PostgreSQL llamada `clinica_veterinaria`
-3. Copia `application.yaml` y reemplaza los valores:
+1. Clone the repository
+2. Create a PostgreSQL database named `clinica_veterinaria`
+3. Copy `application.yaml` and replace the values:
 
 ```yaml
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/clinica_veterinaria
-    username: TU_USUARIO
-    password: TU_PASSWORD
-
+    username: YOUR_USERNAME
+    password: YOUR_PASSWORD
 api:
-  token: Bearer TU_TOKEN_RENIEC
+  token: Bearer YOUR_RENIEC_TOKEN
 ```
 
-4. Ejecuta con Maven:
+4. Run with Maven:
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
-## 📡 Endpoints principales
+## 📡 Main Endpoints
 
-| Método | Endpoint | Descripción |
+| Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/propietarios` | Registrar propietario |
-| GET | `/propietarios` | Listar propietarios |
-| POST | `/mascotas` | Registrar mascota |
-| GET | `/mascotas` | Listar mascotas |
+| POST | `/owners` | Register owner |
+| GET | `/owners` | List owners |
+| POST | `/pets` | Register pet |
+| GET | `/pets` | List pets |
 
-## 👤 Autor
+## 👤 Author
 
-**Jesus F.** — [github.com/jesus-f-d](https://github.com/jesus-f-d)
+**Jesus Fuster** — [github.com/jesus-f-d](https://github.com/jesus-f-d)
